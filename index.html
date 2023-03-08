@@ -70,6 +70,29 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      .PrevNext{
+        font-size: 17px;
+        position: absolute;
+        right: 50%;
+      }
+      .PrevNext a, .PrevNext a:visited{
+        background-color: #ffc107;
+        box-shadow: 1px 1px #006969;
+        border-radius: 4px;
+        color: #fff;
+        padding: 8px;
+        margin: 16px;
+        text-decoration: none;
+      }
+    .PrevNext a:hover{
+      background-color: #000;
+      box-shadow: 1px 1px #004949;
+    }
+    .box{
+      background-color: lightblue;
+      padding: 32px;
+      font-family: verdana;
+    }
     </style>
 
     
@@ -263,7 +286,9 @@
       </div>
     </div>
   </div>
-
+  <div class="PrevNext">
+    <a href="#">Next &#8250;</a>
+  </div>
 </main>
 
 <footer class="text-muted py-5">
