@@ -70,6 +70,29 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      .PrevNext{
+        font-size: 17px;
+        position: absolute;
+        right: 50%;
+      }
+      .PrevNext a, .PrevNext a:visited{
+        background-color: #ffc107;
+        box-shadow: 1px 1px #006969;
+        border-radius: 4px;
+        color: #fff;
+        padding: 8px;
+        margin: 16px;
+        text-decoration: none;
+      }
+    .PrevNext a:hover{
+      background-color: #000;
+      box-shadow: 1px 1px #004949;
+    }
+    .box{
+      background-color: lightblue;
+      padding: 32px;
+      font-family: verdana;
+    }
     </style>
 
     
@@ -113,109 +136,10 @@
   <div class="album py-5 bg-light">
     <div class="container">
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-        <div class="col">
-            <div class="card shadow-sm">
-              <img src="images/Luke_Combs_-_What_You_See_Is_What_You_Get.png" alt="What You See is What You Get - Luke Combs">
-              <div class="card-body">
-                <h4>What You See is What You Get - Luke Combs $12.99</h4>
-                <p class="card-text">Looking for a country pick me up? This is exactly the album you need.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now!</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                  </div>
-                  <small class="text-muted">4 left!</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="images/Ocean_Front_Property.jpg" alt="Ocean Front Property - George Strait">
-              <div class="card-body">
-                <h4>Ocean Front Property - George Strait $4.99</h4>
-                <p class="card-text">Always looking at taking it back to the classics here at Shaw & Frost Recrods. Enjoy this album from 1987 by George Strait.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now!</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                  </div>
-                  <small class="text-muted">17 left!</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="images/Taylor_Swift_-_Fearless.png" alt="Fearless - Taylor Swift">
-              <div class="card-body">
-                <h4>Fearless - Taylor Swift $15.99</h4>
-                <p class="card-text">Everybody needs a little T-Swift in their life. Take a look at this famous Taylor Swift album, Fearless.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now!</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                  </div>
-                  <small class="text-muted">43 left!</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="images/katy.jpeg" alt="Katy Perry: The Complete Collection">
-            <div class="card-body">
-              <h4>Teenage Dream: The Complete Confection - Katy Perry $13.35</h4>
-              <p class="card-text">Can't get enough Katy? Well here are her biggest hits!</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now!</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                </div>
-                <small class="text-muted">56 left!</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-            <div class="card shadow-sm">
-              <img src="images/william.jpg" alt="William Eyleash: When We All Fall Asleep, Where Do We Go?">
-              <div class="card-body">
-                <h4>When We All Fall Asleep, Where Do We Go? - William Eyelash $19.99</h4>
-                <p class="card-text">This is the album that changed everything. Own it today!</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now!</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                  </div>
-                  <small class="text-muted">12 left!</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <img src="images/liv.png" alt="Olivia Rodrigo: Sour">
-              <div class="card-body">
-                <h4>Sour - Olivia Rodrigo $11.99</h4>
-                <p class="card-text">Pop punk is back! Get your nostalgia fix today.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now!</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
-                  </div>
-                  <small class="text-muted">97 left!</small>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="recordData">
+        <script src="recordsreader2.js"></script>
+  <div class = "PrevNext">
+    <a href="index.html">&#8249; Prev</a>
   </div>
 
 </main>
