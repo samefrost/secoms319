@@ -9,12 +9,12 @@
             "src": "PinkFloyd.jpg" 
         },
         {
-            "title": "The Dark Side of the Moon",
-            "artist": "Pink Floyd",
+            "title": "Back in Black",
+            "artist": "AC-DC",
             "genre": "Rock",
-            "price": "$19.99",
-            "description": "The classic Pink Floyd album is enjoyed by millions. Add it to your collection!",
-            "src": "PinkFloyd.jpg" 
+            "price": "$11.99",
+            "description": "The all-time record by AC-DC is one of our most popular records. Get your own before they are gone.",
+            "src": "BackInBlack.jpg" 
         },
         {
             "title": "The Dark Side of the Moon",
