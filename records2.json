@@ -1,0 +1,58 @@
+{
+    "records": [
+        {
+            "title": "What You See is What You Get",
+            "artist": "Luke Combs",
+            "genre": "Country",
+            "price": "$12.99",
+            "description": "Looking for a country pick me up? This is exactly the album you need.",
+            "src": "images/Luke_Combs_-_What_You_See_Is_What_You_Get.png",
+            "stock": 4
+        },
+        {
+            "title": "Ocean Front Property",
+            "artist": "George Strait",
+            "genre": "Country",
+            "price": "$4.99",
+            "description": "Always looking at taking it back to the classics here at Shaw & Frost Recrods. Enjoy this album from 1987 by George Strait.",
+            "src": "images/Ocean_Front_Property.jpg",
+            "stock": 17
+        },
+        {
+            "title": "Fearless",
+            "artist": "Taylor Swift",
+            "genre": "Country",
+            "price": "$15.99",
+            "description": "Everybody needs a little T-Swift in their life. Take a look at this famous Taylor Swift album, Fearless.",
+            "src": "images/Taylor_Swift_-_Fearless.png",
+            "stock": 43
+        },
+        {
+            "title": "Teenage Dream: The Complete Confection",
+            "artist": "Katy Perry",
+            "genre": "Pop",
+            "price": "$13.35",
+            "description": "Can't get enough Katy? Well here are her biggest hits!",
+            "src": "images/katy.jpeg",
+            "stock": 56
+        },
+        {
+            "title": "When We All Fall Asleep, Where Do We Go?",
+            "artist": "William Eyelash",
+            "genre": "Pop",
+            "price": "$19.99",
+            "description": "This is the album that changed everything. Own it today!",
+            "src": "images/Ready_To_Die.jpg",
+            "stock": 12
+        },
+        {
+            "title": "Sour",
+            "artist": "Olivia Rodrigo",
+            "genre": "Pop",
+            "price": "$9.99",
+            "description": "Pop punk is back! Get your nostalgia fix today.",
+            "src": "images/liv.png",
+            "stock": 97
+        }
+    ]
+}
