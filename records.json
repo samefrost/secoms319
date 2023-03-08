@@ -6,7 +6,7 @@
             "genre": "Rock",
             "price": "$19.99",
             "description": "The classic Pink Floyd album is enjoyed by millions. Add it to your collection!",
-            "src": "PinkFloyd.jpg" 
+            "src": "images/PinkFloyd.jpg" 
         },
         {
             "title": "Back in Black",
