@@ -31,6 +31,7 @@ function dataToHTML(data){
             </div>
           </div>
         </div>
+    </div>
     `;
     mainContainer.appendChild(mytr);
 }
