@@ -4,7 +4,7 @@
             "title": "The Dark Side of the Moon",
             "artist": "Pink Floyd",
             "genre": "Rock",
-            "price": "$19.99",
+            "price": 19.99,
             "description": "The classic Pink Floyd album is enjoyed by millions. Add it to your collection!",
             "src": "images/PinkFloyd.jpg",
             "stock": 13
@@ -13,7 +13,7 @@
             "title": "Back in Black",
             "artist": "AC-DC",
             "genre": "Rock",
-            "price": "$11.99",
+            "price": 11.99,
             "description": "The all-time record by AC-DC is one of our most popular records. Get your own before they are gone.",
             "src": "images/BackInBlack.jpg",
             "stock": 1
@@ -22,7 +22,7 @@
             "title": "Escape",
             "artist": "Journey",
             "genre": "Rock",
-            "price": "$9.99",
+            "price": 9.99,
             "description": "Want to go on a Journey? Look no further, here is the perfect album for you!",
             "src": "images/JourneyEscapealbumcover.jpg",
             "stock": 50
@@ -31,7 +31,7 @@
             "title": "Astroworld",
             "artist": "Travis Scott",
             "genre": "Hip/Hop",
-            "price": "$18.99",
+            "price": 18.99,
             "description": "Get caught up with the new age music with one of our newest released records available!",
             "src": "images/Astroworld_by_Travis_Scott.jpg",
             "stock": 14
@@ -40,7 +40,7 @@
             "title": "Ready To Die",
             "artist": "The Notorious B.I.G",
             "genre": "Hip/Hop",
-            "price": "$7.99",
+            "price": 7.99,
             "description": "an't go wrong with the classics. Enjoy this 1994 rap record by the one, the only, The Notorious B.I.G",
             "src": "images/Ready_To_Die.jpg",
             "stock": 35
@@ -49,7 +49,7 @@
             "title": "The Blueprint",
             "artist": "Jay Z",
             "genre": "Hip/Hop",
-            "price": "$9.99",
+            "price": 9.99,
             "description": "You can never go wrong with a little Jay Z in your life.",
             "src": "images/The_Blueprint.png",
             "stock": 22

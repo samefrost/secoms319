@@ -18,7 +18,7 @@ function dataToHTML(data){
     <div class="card shadow-sm">
       <img src="${source}" alt="${artist} - ${title}">
       <div class="card-body">
-          <h4>${artist} - ${title}   ${price}</h4>
+          <h4>${artist} - ${title}   $${price}</h4>
         <p class="card-text">${description}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
