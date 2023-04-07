@@ -1,0 +1,1 @@
+export const Genres = ["Hip/Hop", "Rock", "Country", "Pop"];
