@@ -10,6 +10,8 @@ export function App(){
   const [searchTerm, setSearchTerm] = useState('');
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [showCheckout, setShowCheckout] = useState(false);
+  const [showSubmission, setShowSubmission] = useState(false);
 
 
   const handleInputChange = (event) => {
@@ -21,12 +23,28 @@ export function App(){
   };
 
   const handleViewCartClick = () => {
+    setShowSubmission(false);
+    setShowCheckout(false);
     setShowCart(true);
   };
 
   const handleBackToCatalogClick = () => {
+    setShowSubmission(false);
+    setShowCheckout(false);
     setShowCart(false);
   };
+
+  const handleCheckoutClick = () => {
+    setShowSubmission(false);
+    setShowCart(false);
+    setShowCheckout(true);
+  }
+
+  const handleSubmitClick = () => {
+    setShowSubmission(true);
+    setShowCart(false);
+    setShowCheckout(false);
+  }
 
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
@@ -39,7 +57,7 @@ export function App(){
     setCartItems(updatedCartItems);
   };
 
-    const removeItem = (index) => {
+  const removeItem = (index) => {
     const updatedCartItems = [...cartItems];
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
@@ -51,94 +69,6 @@ export function App(){
       total += cartItems[i].price * cartItems[i].quantity;
     }
     return total;
-  };
-  
-  const handleCheckout = () => {
-      // Get form data
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const address = document.getElementById('address').value;
-      const city = document.getElementById('city').value;
-      const state = document.getElementById('state').value;
-      const zip = document.getElementById('zip').value;
-      const cardName = document.getElementById('card-name').value;
-      const cardNumber = document.getElementById('card-number').value;
-      const expiration = document.getElementById('expiration').value;
-      const cvv = document.getElementById('cvv').value;
-    
-      // Validate form data
-      if (!name || !email || !address || !city || !state || !zip || !cardName || !cardNumber || !expiration || !cvv) {
-        // Show alert if any field is empty
-        const alertPlaceholder = document.getElementById('alert-placeholder');
-        const alert = document.createElement('div');
-        alert.classList.add('alert', 'alert-danger', 'fade', 'show');
-        alert.setAttribute('role', 'alert');
-        alert.innerHTML = 'Please fill out all fields.';
-        alertPlaceholder.appendChild(alert);
-        setTimeout(() => {
-          alert.classList.remove('show');
-        }, 3000);
-        return;
-      }
-    
-      // Show confirmation screen
-      const checkoutScreen = document.getElementById('checkout-screen');
-      checkoutScreen.innerHTML = `
-        <h3 class="mb-3">Order Summary</h3>
-        <ul class="list-group mb-3">
-          ${cartItems.map((item) => `
-            <li class="list-group-item d-flex justify-content-between lh-sm">
-              <div>
-                <h6 class="my-0">${item.title}</h6>
-                <small class="text-muted">${item.description}</small>
-              </div>
-              <span class="text-muted">$${item.price.toFixed(2)}</span>
-            </li>
-          `).join('')}
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$${calculateTotal().toFixed(2)}</strong>
-          </li>
-        </ul>
-        <h3 class="mb-3">Payment</h3>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="card-name" class="form-label">Name on card</label>
-            <input type="text" class="form-control" id="card-name" required>
-            <small class="text-muted">Full name as displayed on card</small>
-            <div class="invalid-feedback">
-              Name on card is required
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="card-number" class="form-label">Credit card number</label>
-            <input type="text" class="form-control" id="card-number" required>
-            <div class="invalid-feedback">
-              Credit card number is required
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="expiration" class="form-label">Expiration</label>
-            <input type="text" class="form-control" id="expiration" required>
-            <div class="invalid-feedback">
-              Expiration date is required
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="cvv" class="form-label">CVV</label>
-            <input type="text" class="form-control" id="cvv" required>
-            <div class="invalid-feedback">
-            CVV is required
-            </div>
-            </div>
-            </div>
-            <hr class="my-4">
-            <button class="w-100 btn btn-primary btn-lg" type="submit">Place Order</button>
-            `;
-            
-    
   };
   
 
@@ -202,7 +132,7 @@ export function App(){
                     className="btn btn-warning"
                     onClick={handleViewCartClick}
                   >
-                    View Cart
+                    View Cart ({cartItems.length})
                   </button>
                 )}
               </div>
@@ -211,7 +141,7 @@ export function App(){
         </header>
       </div>
       <div className="ml-5 p-10 xl:basis-4/5">
-        {showCart ? (
+        {showCart && !showCheckout && !showSubmission && (
           <div className="container">
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-600 mt-5 mb-3">
             Cart
@@ -268,20 +198,103 @@ export function App(){
                 <h5 className="me-3">Total:</h5>
                 <h5>${calculateTotal().toFixed(2)}</h5>
               </div>
-              <button
-                className="btn btn-primary ms-3"
-                onClick={handleCheckout}
-              >
-                Checkout
-              </button>
             </div>
           )}
           <div className="d-flex justify-content-end mt-3">
             <h3 className="text-end">Total: ${calculateTotal().toFixed(2)}</h3>
+            <button
+              className="btn btn-primary me-3"
+              onClick={handleCheckoutClick}
+            >
+              Checkout
+            </button>
           </div>
         </div>
         
-        ) : (
+        )}
+        {showCheckout && !showCart && !showSubmission &&(  <div>
+    <h2 className="text-3xl font-extrabold tracking-tight text-gray-600 mt-5 mb-3">
+      Checkout
+    </h2>
+    <form>
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label">
+          Full Name
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="name"
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="address" className="form-label">
+          Address
+        </label>
+        <textarea
+          className="form-control"
+          id="address"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="cardNumber" className="form-label">
+          Credit Card Number
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="cardNumber"
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="expiration" className="form-label">
+          Expiration Date
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="expiration"
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="cvv" className="form-label">
+          CVV
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          id="cvv"
+          required
+        />
+      </div>
+      <div className="d-grid gap-2">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick ={() => handleSubmitClick()}
+        >
+          Submit Order
+        </button>
+      </div>
+    </form>
+  </div>)}
+      {!showCart && !showCheckout && !showSubmission &&(
           <div className="container">
             <h2 className="text-3xl font-extrabold tracking-tight text-gray-600 mt-5 mb-3">
               Products ({RecordsGenre.length})
@@ -321,7 +334,14 @@ export function App(){
               ))}
             </div>
           </div>
-        )}
+        )
+      }
+      {!showCart && !showCheckout && showSubmission &&(
+        <div>
+          <h1>Order Confirmation</h1>
+          <p>Thank you for your order! Your order has been submitted and is being processed.</p>
+        </div>
+      )}
       </div>
     </div>
   );
