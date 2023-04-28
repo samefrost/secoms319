@@ -78,3 +78,16 @@ app.delete("/delete", async (req, res) => {
         console.log("Error while deleteing: " + p_id + " " + err);
     }
 });
+
+app.put("/:id/updatePrice", async(req, res) => {
+    const id = req.params.id;
+    const newPrice = req.body.price;
+    try {
+        const query = { _id: id };
+        const update = { price: newPrice };
+        const updatedProduct = await Product.findOneAndUpdate(query, update, { new: true });
+        res.send(updatedProduct);
+    } catch (err) {
+        console.log("Error while updating product price: " + err);
+    }
+});
