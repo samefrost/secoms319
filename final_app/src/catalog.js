@@ -62,15 +62,6 @@ export const Records = [
         "stock": 4
     },
     {
-        "title": "Ocean Front Property",
-        "artist": "George Strait",
-        "genre": "Country",
-        "price": 4.99,
-        "description": "Always looking at taking it back to the classics here at Shaw & Frost Recrods. Enjoy this album from 1987 by George Strait.",
-        "image": ".https://upload.wikimedia.org/wikipedia/en/e/e9/Ocean_Front_Property.jpg",
-        "stock": 17
-    },
-    {
         "title": "Fearless",
         "artist": "Taylor Swift",
         "genre": "Country",
