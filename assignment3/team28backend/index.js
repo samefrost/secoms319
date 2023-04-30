@@ -6,6 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static("images"));
 
 mongoose.connect("mongodb://127.0.0.1:27017/reactdata", {
   dbName: "reactdata",
@@ -77,5 +78,27 @@ app.delete("/delete", async (req, res) => {
     res.send(JSON.stringify(messageResponse));
   } catch (err) {
     console.log("Error while deleting :" + p_id + " " + err);
+  }
+});
+
+app.put("/:id/update-price", async (req, res) => {
+  const id = req.params.id;
+  const newPrice = req.body.price;
+
+  try {
+    const query = { _id: id };
+    const update = { $set: { price: newPrice } };
+    const options = { new: true }; // Return the updated document
+    const updatedProduct = await Product.findOneAndUpdate(
+      query,
+      update,
+      options
+    );
+    const messageResponse = {
+      message: `Price of product ${id} updated to ${newPrice}`,
+    };
+    res.send(JSON.stringify(messageResponse));
+  } catch (err) {
+    console.log("Error while updating price of product:" + err);
   }
 });

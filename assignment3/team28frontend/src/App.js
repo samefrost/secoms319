@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import "./index.css"
+import "./index.css";
 
 function App() {
   const [product, setProduct] = useState([]);
@@ -10,6 +10,8 @@ function App() {
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
   const [viewer4, setViewer4] = useState(false);
+  const [newPrice, setNewPrice] = useState(0);
+  const [id, setId] = useState("");
 
   function getAllProducts() {
     fetch("http://localhost:4000/")
@@ -158,8 +160,23 @@ function App() {
       });
     setChecked4(!checked4);
   }
-
-
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    fetch(`http://localhost:4000/${id}/update-price`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({price: newPrice})
+    })
+      .then((response => response.json()))
+      .then((data) => {
+        console.log("Price update completed for: " + id);
+        console.log(data);
+        if(data) {
+          const value = Object.values(data);
+          alert(value);
+        }
+      })
+  };
 
   return (
     <>
@@ -269,6 +286,28 @@ function App() {
           {product[index].rating.count} <br />
         </div>
       )}
+      <div>
+        <h3>Update Price:</h3>
+        <form onSubmit={handleSubmit}>
+          <label>
+            ID of product for price update:
+            <input
+              type="text"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+            />
+          </label>
+          <label>
+            New Price:
+            <input
+              type="number"
+              value={newPrice}
+              onChange={(e) => setNewPrice(e.target.value)}
+            />
+          </label>
+          <button type="submit">Update Price</button>
+        </form>
+      </div>
     </>
   );
 } // App end
