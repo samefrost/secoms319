@@ -4,6 +4,10 @@ const cors = require("cors");
 const { Product } = require("./dataSchema"); // import the Product model
 const app = express();
 
+const path = require('path');
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+
 app.use(express.json());
 app.use(cors());
 app.use(express.static("images"));
