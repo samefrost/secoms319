@@ -164,6 +164,7 @@ function App() {
   return (
     <>
       <div>
+        <h1 class = "main">Team 28 Assignment 3</h1>
         <h1>Catalog of Products</h1>
         <button onClick={() => getAllProducts()}>Show All products</button>
         <input
