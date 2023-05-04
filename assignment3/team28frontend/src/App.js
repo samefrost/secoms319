@@ -309,6 +309,9 @@ function App() {
           <button type="submit">Update Price</button>
         </form>
       </div>
+      <footer>
+        Team 28: Kerwn Shaw and Sam Frost
+      </footer>
     </>
   );
 } // App end
