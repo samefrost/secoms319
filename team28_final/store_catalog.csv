@@ -1,0 +1,7 @@
+_id,artist,description,genre,price,rating.count,rating.rate,src,stock,title
+1,Luke Combs,Looking for a country pick me up? This is exactly the album you need.,Country,12.99,352,4.2,http://localhost:4000/images/Luke_Combs_-_What_You_See_Is_What_You_Get.png,4,What You See is What You Get
+3,Taylor Swift,"Everybody needs a little T-Swift in their life. Take a look at this famous Taylor Swift album, Fearless.",Country,15.99,612,4.7,http://localhost:4000/images/Taylor_Swift_-_Fearless.png,43,Fearless
+5,William Eyelash,This is the album that changed everything. Own it today!,Pop,19.99,7,5,http://localhost:4000/images/william.jpg,12,"When We All Fall Asleep, Where Do We Go?"
+14,Travis Scott,"Keep up with the latest hits of Travis Scott with this album, Astroworld.",Rap,15.99,144,4.7,http://localhost:4000/images/Astroworld_by_Travis_Scott.jpg,78,Astroworld
+34,Journey,Take a trip back to the past with this great album!,Rock,8.98,56,4.2,http://localhost:4000/images/JourneyEscapealbumcover.jpg,43,Escape
+55,Pink Floyd,"Our best selling record on the market! Get yours before it's gone!",Rock,24.99,1555,5,http://localhost:4000/images/pinkfloyd.jpg,78,To The Moon
